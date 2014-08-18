@@ -32,7 +32,7 @@ library(reshape2)
 library(stringr)
 
 ## Defines the columns that are going to be extracted from the raw data tables
-columns <- c(1:6,41:46,81:86,121:126,161:166,201,202,214,215,227,228,240,241,253,254,266:271,345:350,424:429,503:504,516:517,529:530,542:543)
+columns <- c(1:6, 41:46, 81:86, 121:126, 161:166, 201:202, 214:215, 227:228, 240:241, 253:254, 266:271, 345:350, 424:429, 503:504, 516:517, 529:530, 542:543)
 
 ## Reads 'train' data from the different files 
 trainData <- read.table("./UCI HAR Dataset//train/X_train.txt")
