@@ -60,34 +60,34 @@ rm("trainData","trainSport","trainSubject")
 rm("testData","testSport","testSubject")
 
 ## Columns names are loaded from the specified file in the provided raw data
-col_names <- read.table("./UCI HAR Dataset//features.txt")
+colNames <- read.table("./UCI HAR Dataset//features.txt")
 ## and a description name for colums 1 and 2 are joined with the loaded ones
-col_names <- c("subject", "sport", as.character(col_names[columns,2]))
+colNames <- c("subject", "sport", as.character(colNames[columns,2]))
 
 ## Now columns names are changed into better ones removing non deseables characters
 charToRemove <- c( "-", "\\(", "\\)" )		## Characters to remove
-for (k in charToRemove) col_names <- gsub(k,"",col_names)
+for (k in charToRemove) colNames <- gsub(k,"",colNames)
 ## Other modifications necessary to the better understanding of the columns names
-col_names <- str_replace(col_names,"mean", "Mean")
-col_names <- str_replace( col_names, "std", "Std")
+colNames <- str_replace(colNames,"mean", "Mean")
+colNames <- str_replace( colNames, "std", "Std")
 
 ## assigns the label names to the columns in the data.frame
-colnames(tidyData) <- col_names
+colnames(tidyData) <- colNames
 rm("charToRemove","columns","k")
 
 ## Read sports description from the given file
-sport_names <- read.table("./UCI HAR Dataset/activity_labels.txt")
+sportNames <- read.table("./UCI HAR Dataset/activity_labels.txt")
 ## replaces the value in sport column by its description
-tidyData$sport <- factor(tidyData$sport, levels= 1:6, labels = sport_names[,2])
+tidyData$sport <- factor(tidyData$sport, levels= 1:6, labels = sportNames[,2])
 
 ## The tidy dataset is ready. Export it to a file
 write.table(tidyData, "./tidyyData.txt", sep = ",", row.name=FALSE)
 
 ## Now create the summarized data set with the mean of every column taken by 'sport' type and 'subject'
 summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(tidyData$subject, tidyData$sport), FUN = "mean")
-colnames(summaryData) <- col_names
+colnames(summaryData) <- colNames
 ## assigns the columns labels again
-rm("col_names","sport_names")
+rm("colNames","sportNames")
 
 ## The summarized dataset is ready. Export it to a file
 write.table(summaryData, "./summaryData.txt", sep = ",", row.name=FALSE)
