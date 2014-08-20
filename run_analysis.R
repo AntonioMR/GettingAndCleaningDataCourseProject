@@ -15,8 +15,9 @@
 ## 	in the working directory where this script is executed	
 ##
 ## Inputs: No inputs are required except the raw data in the correct location
-## Output: The script generates two kind of outputs
-## 	tidyData and SummaryData datasets loaded in memory
+## Output: The script outputs a summarized data set taking the mean for each variable
+##      grouped by the first and second columns.
+## 	tidyData and SummaryData datasets loaded in environment memory
 ##	tidyData.txt and SummaryData.txt files containing the datasets stored 
 ##	in the working directory
 ##
@@ -91,3 +92,5 @@ rm("colNames","sportNames")
 
 ## The summarized dataset is ready. Export it to a file
 write.table(summaryData, "./summaryData.txt", sep = ",", row.name=FALSE)
+
+print(summaryData)
