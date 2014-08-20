@@ -13,7 +13,7 @@
 
 ## Objective
 
-This repository contain the Course Project for the Getting and Cleaning Data Course at the Coursera Specialization in Data Science.  
+This repository contain the Course Project for the [Getting and Cleaning Data Course](https://www.coursera.org/course/getdata) at the [Coursera Specialization in Data Science](https://www.coursera.org/specialization/jhudatascience/1?utm_medium=listingPage).  
 The goal of the project consists in create a R language script to import, clean and summarize a dataset from different files and export the obtained dataset to a file.  
 The raw data to process can be obtained in the next link:
 [Raw dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)

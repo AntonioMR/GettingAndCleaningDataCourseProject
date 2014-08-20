@@ -12,7 +12,7 @@ A group of 30 volunteers have been recording accelerometers and gyroscope values
 Two datasets were recorded, one during a test period and other one during a training period.  
 After that, the recorded have been processed in order to obtain several statystics mesures of the raw accelerometers and gyroscope datasets.  
 The data is packaged in a Zip file and can be downloaden from the next link:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+[Raw dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)  
 After the files are unzipped you must have the following files and directories structure.  
 
  *  **UCI HAR Dataset** ``Data  root directory``   
