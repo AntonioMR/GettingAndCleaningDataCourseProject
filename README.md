@@ -50,7 +50,7 @@ This is one table that Merges the *training* and the *test* sets in only one tab
 Only the measurements on the mean and standard deviation for each measurement must be extracted to create the new table.  
 The structure of this table is described bellow:  
 
-|  **subject**  |  **sport**  |  **sensors data**  |  
+|  **subject**  |  **sport**  |  **sensors data [1..66]**  |  
 | :-----------: | :---------: | :----------------: |  
 |  subject\_train.txt  |  Y\_train.txt  |  X\_train.txt  |  
 |  subject\_test.txt  |  Y\_test.txt  |  X\_test.txt|  
@@ -82,9 +82,9 @@ Also, two comma separated txt files are created with the two datasets in the wor
 
 ## Imported Libraries
 
-* **data.table**: Loaded to use the 'data.table' data type.   
-* **reshape2**: Loaded to use the 'aggregate' function.  
-* **stringr**: Loaded to use the 'str\_replace' function.  
+* [**data.table**](http://cran.r-project.org/web/packages/data.table/index.html): Loaded to use the 'data.table' data type.   
+* [**reshape2**](http://cran.r-project.org/web/packages/reshape2/index.html): Loaded to use the 'aggregate' function.  
+* [**stringr**](http://cran.r-project.org/web/packages/stringr/index.html): Loaded to use the 'str\_replace' function.  
 
 ## The Script Variables  
 
