@@ -1,5 +1,10 @@
 # Getting and Cleaning Data Course Project
 
+## Table of Contents
+- [The Raw Data](#the-raw-data)
+- [The Dataset Variables](#the-dataset-variables)
+- [Variables Units](#variables-units)
+
 ## The Raw data
 
 The raw data are several dataset collected from the accelerometers from the Samsung Galaxy S smartphone.  
@@ -28,83 +33,84 @@ After the files are unzipped you must have the following files and directories s
 
 More information about the raw data can be obtained in the *README.txt* file contained in the zip file.  
 
-## The datasets variables
+## The Dataset Variables
 
 The course project requests that only the measurements on the mean and standard deviation for each measurement must be extracted. And furthermore the labels must be transformed into more appropiate ones.  
+Only variables with mean and stardard deviation observation have been taken to create the requested tables. Created tables have sixty six variables in adition to the subject and sport variable.  
 All the variables labels in the generated tables are based in the originals ones. Specials characters like '-', '\(' or '\)' have been removed. In adition the "mean" and "std" strings have been changed with "Mean" and "Std" in order to obtain more readable ones (low Camel) instead of all lowcase ones.  
 The original variables can be founded in the *features.txt* file contained in the raw dataset.  
 Both generated tables have the following variables:
 
-* **subject:** Subject who practiced the activitie  
-* **sport:**  Activitie that was being practiced  
-* **tBodyAccMeanX:** Body acceleration mean X axis  
-* **tBodyAccMeanY:** Body acceleration mean Y axis  
-* **tBodyAccMeanZ:** Body acceleration mean Z axis  
-* **tBodyAccStdX:** Body acceleration standard deviation X axis  
-* **tBodyAccStdY:** Body acceleration standard deviation Y axis  
-* **tBodyAccStdZ:** Body acceleration standard deviation Z axis  
-* **tGravityAccMeanX:** Gravity acceleration mean X axis  
-* **tGravityAccMeanY:** Gravity acceleration mean Y axis  
-* **tGravityAccMeanZ:** Gravity acceleration mean Z axis  
-* **tGravityAccStdX:** Gravity acceleration standard deviation X axis  
-* **tGravityAccStdY:** Gravity acceleration standard deviation Y axis  
-* **tGravityAccStdZ:** Gravity acceleration standard deviation Z axis  
-* **tBodyAccJerkMeanX:** Body acceleration Jerk signal mean X axis  
-* **tBodyAccJerkMeanY:** Body acceleration Jerk signal mean Y axis  
-* **tBodyAccJerkMeanZ:** Body acceleration Jerk signal mean Z axis  
-* **tBodyAccJerkStdX:** Body acceleration Jerk signal standard deviation X axis  
-* **tBodyAccJerkStdY:** Body acceleration Jerk signal standard deviation Y axis  
-* **tBodyAccJerkStdZ:** Body acceleration Jerk signal standard deviation Z axis  
-* **tBodyGyroMeanX:** Body gyroscope mean X axis  
-* **tBodyGyroMeanY:** Body gyroscope mean Y axis  
-* **tBodyGyroMeanZ:** Body gyroscope mean Z axis  
-* **tBodyGyroStdX:** Body gyroscope standard deviation X axis  
-* **tBodyGyroStdY:** Body gyroscope standard deviation Y axis  
-* **tBodyGyroStdZ:** Body gyroscope standard deviation Z axis  
-* **tBodyGyroJerkMeanX:** Body gyroscope Jerk signal mean X axis  
-* **tBodyGyroJerkMeanY:** Body gyroscope Jerk signal mean Y axis  
-* **tBodyGyroJerkMeanZ:** Body gyroscope Jerk signal mean Z axis  
-* **tBodyGyroJerkStdX:** Body gyroscope Jerk signal standard deviation X axis  
-* **tBodyGyroJerkStdY:** Body gyroscope Jerk signal standard deviation Y axis  
-* **tBodyGyroJerkStdZ:** Body gyroscope Jerk signal standard deviation Z axis  
-* **tBodyAccMagMean:** Body acceleration magnitude mean  
-* **tBodyAccMagStd:** Body acceleration magnitude standard deviation  
-* **tGravityAccMagMean:** Gravity acceleration magnitude mean  
-* **tGravityAccMagStd:** Gravity acceleration magnitude standard deviation  
-* **tBodyAccJerkMagMean:** Body acceleration Jerk signal magnitude Mean  
-* **tBodyAccJerkMagStd:** Body acceleration Jerk signal magnitude standard deviation  
-* **tBodyGyroMagMean:** Body gyroscope magnitude mean  
-* **tBodyGyroMagStd:** Body gyroscope magnitude standard deviation  
-* **tBodyGyroJerkMagMean:** Body gyroscope Jerk signal magnitude mean  
-* **tBodyGyroJerkMagStd:** Body gyroscope Jerk signal magnitude standard deviation  
-* **fBodyAccMeanX:** FFT body acceleration mean X axis  
-* **fBodyAccMeanY:** FFT body acceleration mean Y axis  
-* **fBodyAccMeanZ:** FFT body acceleration mean Z axis  
-* **fBodyAccStdX:** FFT body acceleration standard deviation X axis  
-* **fBodyAccStdY:** FFT body acceleration standard deviation Y axis  
-* **fBodyAccStdZ:** FFT body acceleration standard deviation Z axis  
-* **fBodyAccJerkMeanX:** FFT body acceleration Jerk signal mean X axis  
-* **fBodyAccJerkMeanY:** FFT body acceleration Jerk signal mean Y axis  
-* **fBodyAccJerkMeanZ:** FFT body acceleration Jerk signal mean Z axis  
-* **fBodyAccJerkStdX:** FFT body acceleration Jerk signal standard deviation X axis  
-* **fBodyAccJerkStdY:** FFT body acceleration Jerk signal standard deviation Y axis  
-* **fBodyAccJerkStdZ:** FFT body acceleration Jerk signal standard deviation Z axis  
-* **fBodyGyroMeanX:** FFT body gyroscope mean X axis  
-* **fBodyGyroMeanY:** FFT body gyroscope mean Y axis  
-* **fBodyGyroMeanZ:** FFT body gyroscope mean Z axis  
-* **fBodyGyroStdX:** FFT body gyroscope standard deviation X axis  
-* **fBodyGyroStdY:** FFT body gyroscope standard deviation Y axis  
-* **fBodyGyroStdZ:** FFT body gyroscope standard deviation Z axis  
-* **fBodyAccMagMean:** FFT body acceleration magnitude mean  
-* **fBodyAccMagStd:** FFT body acceleration magnitude standard deviation  
-* **fBodyBodyAccJerkMagMean:** FFT body acceleration Jerk signal magnitude mean  
-* **fBodyBodyAccJerkMagStd:** FFT body acceleration Jerk signal magnitude standard deviation  
-* **fBodyBodyGyroMagMean:** FFT body gyroscope magnitude mean  
-* **fBodyBodyGyroMagStd:** FFT body gyroscope magnitude standard deviation  
-* **fBodyBodyGyroJerkMagMean:** FFT body gyroscope Jerk signal magnitude mean  
-* **fBodyBodyGyroJerkMagStd:** FFT body gyroscope Jerk signal magnitude standard deviation  
+1. **subject:** Subject who practiced the activitie  
+1. **sport:**  Activitie that was being practiced  
+1. **tBodyAccMeanX:** Body acceleration mean X axis  
+1. **tBodyAccMeanY:** Body acceleration mean Y axis  
+1. **tBodyAccMeanZ:** Body acceleration mean Z axis  
+1. **tBodyAccStdX:** Body acceleration standard deviation X axis  
+1. **tBodyAccStdY:** Body acceleration standard deviation Y axis  
+1. **tBodyAccStdZ:** Body acceleration standard deviation Z axis  
+1. **tGravityAccMeanX:** Gravity acceleration mean X axis  
+1. **tGravityAccMeanY:** Gravity acceleration mean Y axis  
+1. **tGravityAccMeanZ:** Gravity acceleration mean Z axis  
+1. **tGravityAccStdX:** Gravity acceleration standard deviation X axis  
+1. **tGravityAccStdY:** Gravity acceleration standard deviation Y axis  
+1. **tGravityAccStdZ:** Gravity acceleration standard deviation Z axis  
+1. **tBodyAccJerkMeanX:** Body acceleration Jerk signal mean X axis  
+1. **tBodyAccJerkMeanY:** Body acceleration Jerk signal mean Y axis  
+1. **tBodyAccJerkMeanZ:** Body acceleration Jerk signal mean Z axis  
+1. **tBodyAccJerkStdX:** Body acceleration Jerk signal standard deviation X axis  
+1. **tBodyAccJerkStdY:** Body acceleration Jerk signal standard deviation Y axis  
+1. **tBodyAccJerkStdZ:** Body acceleration Jerk signal standard deviation Z axis  
+1. **tBodyGyroMeanX:** Body gyroscope mean X axis  
+1. **tBodyGyroMeanY:** Body gyroscope mean Y axis  
+1. **tBodyGyroMeanZ:** Body gyroscope mean Z axis  
+1. **tBodyGyroStdX:** Body gyroscope standard deviation X axis  
+1. **tBodyGyroStdY:** Body gyroscope standard deviation Y axis  
+1. **tBodyGyroStdZ:** Body gyroscope standard deviation Z axis  
+1. **tBodyGyroJerkMeanX:** Body gyroscope Jerk signal mean X axis  
+1. **tBodyGyroJerkMeanY:** Body gyroscope Jerk signal mean Y axis  
+1. **tBodyGyroJerkMeanZ:** Body gyroscope Jerk signal mean Z axis  
+1. **tBodyGyroJerkStdX:** Body gyroscope Jerk signal standard deviation X axis  
+1. **tBodyGyroJerkStdY:** Body gyroscope Jerk signal standard deviation Y axis  
+1. **tBodyGyroJerkStdZ:** Body gyroscope Jerk signal standard deviation Z axis  
+1. **tBodyAccMagMean:** Body acceleration magnitude mean  
+1. **tBodyAccMagStd:** Body acceleration magnitude standard deviation  
+1. **tGravityAccMagMean:** Gravity acceleration magnitude mean  
+1. **tGravityAccMagStd:** Gravity acceleration magnitude standard deviation  
+1. **tBodyAccJerkMagMean:** Body acceleration Jerk signal magnitude Mean  
+1. **tBodyAccJerkMagStd:** Body acceleration Jerk signal magnitude standard deviation  
+1. **tBodyGyroMagMean:** Body gyroscope magnitude mean  
+1. **tBodyGyroMagStd:** Body gyroscope magnitude standard deviation  
+1. **tBodyGyroJerkMagMean:** Body gyroscope Jerk signal magnitude mean  
+1. **tBodyGyroJerkMagStd:** Body gyroscope Jerk signal magnitude standard deviation  
+1. **fBodyAccMeanX:** FFT body acceleration mean X axis  
+1. **fBodyAccMeanY:** FFT body acceleration mean Y axis  
+1. **fBodyAccMeanZ:** FFT body acceleration mean Z axis  
+1. **fBodyAccStdX:** FFT body acceleration standard deviation X axis  
+1. **fBodyAccStdY:** FFT body acceleration standard deviation Y axis  
+1. **fBodyAccStdZ:** FFT body acceleration standard deviation Z axis  
+1. **fBodyAccJerkMeanX:** FFT body acceleration Jerk signal mean X axis  
+1. **fBodyAccJerkMeanY:** FFT body acceleration Jerk signal mean Y axis  
+1. **fBodyAccJerkMeanZ:** FFT body acceleration Jerk signal mean Z axis  
+1. **fBodyAccJerkStdX:** FFT body acceleration Jerk signal standard deviation X axis  
+1. **fBodyAccJerkStdY:** FFT body acceleration Jerk signal standard deviation Y axis  
+1. **fBodyAccJerkStdZ:** FFT body acceleration Jerk signal standard deviation Z axis  
+1. **fBodyGyroMeanX:** FFT body gyroscope mean X axis  
+1. **fBodyGyroMeanY:** FFT body gyroscope mean Y axis  
+1. **fBodyGyroMeanZ:** FFT body gyroscope mean Z axis  
+1. **fBodyGyroStdX:** FFT body gyroscope standard deviation X axis  
+1. **fBodyGyroStdY:** FFT body gyroscope standard deviation Y axis  
+1. **fBodyGyroStdZ:** FFT body gyroscope standard deviation Z axis  
+1. **fBodyAccMagMean:** FFT body acceleration magnitude mean  
+1. **fBodyAccMagStd:** FFT body acceleration magnitude standard deviation  
+1. **fBodyBodyAccJerkMagMean:** FFT body acceleration Jerk signal magnitude mean  
+1. **fBodyBodyAccJerkMagStd:** FFT body acceleration Jerk signal magnitude standard deviation  
+1. **fBodyBodyGyroMagMean:** FFT body gyroscope magnitude mean  
+1. **fBodyBodyGyroMagStd:** FFT body gyroscope magnitude standard deviation  
+1. **fBodyBodyGyroJerkMagMean:** FFT body gyroscope Jerk signal magnitude mean  
+1. **fBodyBodyGyroJerkMagStd:** FFT body gyroscope Jerk signal magnitude standard deviation  
 
-## Variables units
+## Variables Units
 
 The original measures units were:
 * *standard gravity units 'g'* for all the acceleration signals.

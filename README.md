@@ -1,11 +1,22 @@
 # Getting and Cleaning Data Course Project
 
+## Table of Contents
+- [Objective](#objective)
+- [The Raw Data](#the-raw-data)
+- [Desired Datasets](#desired-datasets)
+    - [Merged dataset](#merged-dataset)
+    - [Summarized dataset](#summarized-dataset)
+- [The R Script](#the-r-script)
+- [Imported Libraries](#imported-libraries)
+- [The Script Variables](#the-script-variables)
+- [Cleaning and Sorting process](#cleaning-and-sorting-process)
+
 ## Objective
 
 This repository contain the Course Project for the Getting and Cleaning Data Course at the Coursera Specialization in Data Science.  
 The goal of the project consists in create a R language script to import, clean and summarize a dataset from different files and export the obtained dataset to a file.  
 The raw data to process can be obtained in the next link:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+[Raw dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip)
 
 The files must be downloaded and extracted in the working directory where the R script will be launched.  
 
@@ -29,7 +40,7 @@ The structure we must have after the extraction must be:
     + *features_info.txt*  
     + *README.txt*  
 
-More information about the raw data can be obtained in the CodeBook file.  
+More information about the raw data can be obtained in the [CodeBook](https://github.com/AntonioMR/GettingAndCleaningDataCourseProject/blob/master/CodeBook.md#the-raw-data).  
 
 ## Desired Datasets
 The R script is expected to create two dataset combining the data stored in the different raw data files.  
@@ -44,6 +55,8 @@ The structure of this table is described bellow:
 |  subject\_train.txt  |  Y\_train.txt  |  X\_train.txt  |  
 |  subject\_test.txt  |  Y\_test.txt  |  X\_test.txt|  
 
+More information about the variables in the table can be found in the [CodeBook](https://github.com/AntonioMR/GettingAndCleaningDataCourseProject/blob/master/CodeBook.md#the-datasets-variables)  
+The resulting dataset is a table with 10299 observations of 68 variables.  
 
 ### Summarized dataset
 This table consist in the summarization of the previous one where the mean of each variable data is represented for each *subject* and *sport*.  
@@ -59,6 +72,8 @@ The structure of this table is described bellow:
 |  ...        |  ...      |  mean measure 1  |  mean measure 2  |  ...  | mean measure n  |  
 |  subject n  |  sport n  |  mean measure 1  |  mean measure 2  |  ...  | mean measure n  |  
 
+The resulting dataset is a table with 180 observations of 68 variables.  
+
 ## The R Script  
 
 Only one script have been written in order to obtain the two requested dataset. The script named *run\_analysis.R* must be executed in a working directory at the same level as the *UCI HAR Dataset* directory.  
@@ -69,9 +84,9 @@ Also, two comma separated txt files are created with the two datasets in the wor
 
 * **data.table**: Loaded to use the 'data.table' data type.   
 * **reshape2**: Loaded to use the 'aggregate' function.  
-* **stringr**: Loaded to use the '' function.  
+* **stringr**: Loaded to use the 'str\_replace' function.  
 
-## The script variables  
+## The Script Variables  
 
 * **columns:** *This variable stores the features numbers that are going to be extracted from the raw datasets. It's removed before the script finishes*  
 * **trainSubject:** *This variable stores the subject variable for each observation in the 'train' dataset and it's loaded from ``./UCI HAR Dataset/train/subject_test.txt`` file. It's removed before the script finishes*  
@@ -143,7 +158,7 @@ At the end of the script only the tidyData y summaryData variables remain availa
 
 1. The data set is ready and it's exported to a comma separated text file in the current directory with the *write.table* function:
 
-    > write.table(tidyData, "./tidyyData.txt", sep = ",", row.name=FALSE)  
+    > write.table(tidyData, "./tidyData.txt", sep = ",", row.name=FALSE)  
 
 In order to create the second data set requested, all the observations for each variable are merged into the mean taken by the *subject* and *sport* variables.  
 

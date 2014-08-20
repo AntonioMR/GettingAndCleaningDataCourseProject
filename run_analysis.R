@@ -82,7 +82,7 @@ sportNames <- read.table("./UCI HAR Dataset/activity_labels.txt")
 tidyData$sport <- factor(tidyData$sport, levels= 1:6, labels = sportNames[,2])
 
 ## The tidy dataset is ready. Export it to a file
-write.table(tidyData, "./tidyyData.txt", sep = ",", row.name=FALSE)
+write.table(tidyData, "./tidyData.txt", sep = ",", row.name=FALSE)
 
 ## Now create the summarized data set with the mean of every column taken by 'sport' type and 'subject'
 summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(tidyData$subject, tidyData$sport), FUN = "mean")
