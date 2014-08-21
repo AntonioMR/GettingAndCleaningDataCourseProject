@@ -162,13 +162,9 @@ At the end of the script only the tidyData y summaryData variables remain availa
 
 In order to create the second data set requested, all the observations for each variable are merged into the mean taken by the *subject* and *sport* variables.  
 
-1. To do this, a new data set is created using the *aggregate* function from the previous tidy dataset. This function allows us to created new tables passing a function to each column and ordered by certain columns
+1. To do this, a new data set is created using the *aggregate* function from the previous tidy dataset. This function allows us to created new tables passing a function to each column and ordered by certain columns. The new columns label are specified in the function call.
 
-    > summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(tidyData\$subject, tidyData\$sport), FUN = "mean")  
-
-1. Now, the columns names must be assigned again in order to relabel the recently created ones.  
-
-    > colnames(summaryData) <- colNames  
+    > summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(subject=tidyData\$subject, sport=tidyData\$sport), FUN = "mean")  
 
 1. To finish, the obtained data set is exported to a comma separated text file in the current directory with the *write.table* function:  
 

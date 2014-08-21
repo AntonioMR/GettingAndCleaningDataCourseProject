@@ -85,9 +85,7 @@ tidyData$sport <- factor(tidyData$sport, levels= 1:6, labels = sportNames[,2])
 write.table(tidyData, "./tidyData.txt", sep = ",", row.name=FALSE)
 
 ## Now create the summarized data set with the mean of every column taken by 'sport' type and 'subject'
-summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(tidyData$subject, tidyData$sport), FUN = "mean")
-colnames(summaryData) <- colNames
-## assigns the columns labels again
+summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(subject=tidyData$subject, sport=tidyData$sport), FUN = "mean")
 rm("colNames","sportNames")
 
 ## The summarized dataset is ready. Export it to a file
