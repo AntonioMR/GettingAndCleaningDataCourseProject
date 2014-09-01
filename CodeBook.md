@@ -18,14 +18,14 @@ After the files are unzipped you must have the following files and directories s
  *  **UCI HAR Dataset** ``Data  root directory``   
     + **test**  ``Contain the test data files``  
         - **Inertial Signals** ``Sensors raw data. Not used in this project``  
-        - *subject\_test.txt*   ``Indentify the subject who practise the sport in each observation``    
+        - *subject\_test.txt*   ``Indentify the subject who practise the activity in each observation``    
         - *X\_test.txt*  ``Stores all the proccessed observation taken during the test periods``  
-        - *y\_test.txt*  ``Identify the sport that is being practiced in each observation``  
+        - *y\_test.txt*  ``Identify the activity that is being practiced in each observation``  
     + **train**  ``Sensors raw data. Not used in this project``   
         - **Inertial Signals**  ``Sensors raw data. Not used in this project``     
-        - *subject\_train.txt*  ``Indentify the subject who practise the sport in each orservation``     
+        - *subject\_train.txt*  ``Indentify the subject who practise the activity in each orservation``     
         - *X\_train.txt*  ``Stores all the proccessed observation taken during the train periods``    
-        - *y\_train.txt*   ``Identify the sport that is being practiced in each observation``  
+        - *y\_train.txt*   ``Identify the activity that is being practiced in each observation``  
     + *activity_labels.txt*  ``Stores the description for each value represented in the y\_*.txt files``   
     + *features.txt*  ``Stores the labels for all the variables in the X\_*.txt files``   
     + *features_info.txt*  ``A description about the features stored in the datasets``   
@@ -36,13 +36,13 @@ More information about the raw data can be obtained in the *README.txt* file con
 ## The Dataset Variables
 
 The course project requests that only the measurements on the mean and standard deviation for each measurement must be extracted. And furthermore the labels must be transformed into more appropiate ones.  
-Only variables with mean and stardard deviation observation have been taken to create the requested tables. Created tables have sixty six variables in adition to the subject and sport variable.  
+Only variables with mean and stardard deviation observation have been taken to create the requested tables. Created tables have sixty six variables in adition to the subject and activity variable.  
 All the variables labels in the generated tables are based in the originals ones. Specials characters like '-', '\(' or '\)' have been removed. In adition the "mean" and "std" strings have been changed with "Mean" and "Std" in order to obtain more readable ones (low Camel) instead of all lowcase ones.  
 The original variables can be founded in the *features.txt* file contained in the raw dataset.  
 Both generated tables have the following variables:
 
 1. **subject:** Subject who practiced the activitie  
-1. **sport:**  Activitie that was being practiced  
+1. **activity:**  activity that was being practiced  
 1. **tBodyAccMeanX:** Body acceleration mean X axis  
 1. **tBodyAccMeanY:** Body acceleration mean Y axis  
 1. **tBodyAccMeanZ:** Body acceleration mean Z axis  

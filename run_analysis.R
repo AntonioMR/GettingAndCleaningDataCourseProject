@@ -38,32 +38,32 @@ columns <- c(1:6, 41:46, 81:86, 121:126, 161:166, 201:202, 214:215, 227:228, 240
 ## Reads 'train' data from the different files 
 trainData <- read.table("./UCI HAR Dataset//train/X_train.txt")
 trainSubject <- read.table("./UCI HAR Dataset//train/subject_train.txt")
-trainSport <- read.table("./UCI HAR Dataset//train/y_train.txt")
+trainActivity <- read.table("./UCI HAR Dataset//train/y_train.txt")
 ## Considers only the desired columns in the dataset
 trainData <- trainData[,columns]
-## And merges the three data.table adding a 'subject' and 'sport' columns on the left side
-trainData <- cbind(trainSubject, trainSport, trainData)
+## And merges the three data.table adding a 'subject' and 'activity' columns on the left side
+trainData <- cbind(trainSubject, trainActivity, trainData)
 
 ## Reads 'test' data from the different files
 testData <- read.table("./UCI HAR Dataset//test/X_test.txt")
 testSubject <- read.table("./UCI HAR Dataset//test/subject_test.txt")
-testSport <- read.table("./UCI HAR Dataset//test/y_test.txt")
+testActivity <- read.table("./UCI HAR Dataset//test/y_test.txt")
 ## Considers only the desired columns in the dataset
 testData <- testData[,columns]
 ## And merges again into only one data.table
-testData <- cbind(testSubject, testSport, testData)
+testData <- cbind(testSubject, testActivity, testData)
 
 ## Merges the previous data.frames into one containing all the observations for test and train datasets
 tidyData <- rbind(trainData, testData)
 
 ## Removes the non necessary variables
-rm("trainData","trainSport","trainSubject")
-rm("testData","testSport","testSubject")
+rm("trainData","trainActivity","trainSubject")
+rm("testData","testActivity","testSubject")
 
 ## Columns names are loaded from the specified file in the provided raw data
 colNames <- read.table("./UCI HAR Dataset//features.txt")
 ## and a description name for colums 1 and 2 are joined with the loaded ones
-colNames <- c("subject", "sport", as.character(colNames[columns,2]))
+colNames <- c("subject", "activity", as.character(colNames[columns,2]))
 
 ## Now columns names are changed into better ones removing non deseables characters
 charToRemove <- c( "-", "\\(", "\\)" )		## Characters to remove
@@ -76,17 +76,17 @@ colNames <- str_replace( colNames, "std", "Std")
 colnames(tidyData) <- colNames
 rm("charToRemove","columns","k")
 
-## Read sports description from the given file
-sportNames <- read.table("./UCI HAR Dataset/activity_labels.txt")
-## replaces the value in sport column by its description
-tidyData$sport <- factor(tidyData$sport, levels= 1:6, labels = sportNames[,2])
+## Read activities description from the given file
+activityNames <- read.table("./UCI HAR Dataset/activity_labels.txt")
+## replaces the value in activity column by its description
+tidyData$activity <- factor(tidyData$activity, levels= 1:6, labels = activityNames[,2])
 
 ## The tidy dataset is ready. Export it to a file
 write.table(tidyData, "./tidyData.txt", sep = ",", row.name=FALSE)
 
-## Now create the summarized data set with the mean of every column taken by 'sport' type and 'subject'
-summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(subject=tidyData$subject, sport=tidyData$sport), FUN = "mean")
-rm("colNames","sportNames")
+## Now create the summarized data set with the mean of every column taken by 'activity' type and 'subject'
+summaryData <- aggregate(tidyData[,3:ncol(tidyData)], by = list(subject=tidyData$subject, activity=tidyData$activity), FUN = "mean")
+rm("colNames","activityNames")
 
 ## The summarized dataset is ready. Export it to a file
 write.table(summaryData, "./summaryData.txt", sep = ",", row.name=FALSE)
